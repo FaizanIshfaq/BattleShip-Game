@@ -1,28 +1,33 @@
 # BattleShip-Game
 
-Main Game Logic (main):
+Main Class (main):
 
-The game starts by showing a 10x10 grid representing the ocean.
-It randomly places different types of ships on the board.
-Users take turns guessing coordinates to sink the hidden ships until they've found them all.
-The final score and game statistics are displayed.
-Types of Ships (Battleship, Cruiser, Destroyer, Submarine, EmptySea):
+Displays a grid (10x10) to represent the game board.
+Initializes an Ocean object and places ships randomly on the board.
+Allows the user to take shots at the ships until all ships are sunk.
+Prints the final score and game statistics.
+Ship Classes (Battleship, Cruiser, Destroyer, Submarine, EmptySea):
 
-There are different types of ships, like Battleships, Cruisers, and Destroyers, each inheriting common features from the abstract Ship class.
-There's a special type called Submarine.
-Empty spaces on the board are represented by EmptySea.
-Game Board (Ocean):
+Battleship, Cruiser, and Destroyer are specific ship types, each inheriting from the abstract Ship class.
+Submarine is a special case of a ship.
+EmptySea represents an empty space on the game board.
+Ocean Class (Ocean):
 
-Manages the game board, placing ships randomly.
+Represents the game board and manages ship placement.
+Randomly places ships on the board using the placeAllShipsRandomly method.
 Keeps track of shots fired, hits, and sunk ships.
-Users can shoot at specific locations on the board, and the game provides feedback on hits and misses.
-Methods are available to print the board, either showing or hiding ship locations.
-Base Ship Class (Ship):
+Provides methods for shooting at a location, checking if a location is occupied, and determining if the game is over.
+Includes methods to print the board with or without showing ship locations.
+Abstract Ship Class (Ship):
 
-The abstract base class for all ship types.
-Includes common properties and methods for all ships, like placing them on the board and determining if they're sunk.
+An abstract class that serves as the base class for all ship types.
+Contains common properties and methods for ships.
+Includes methods for placing a ship on the board, shooting at a location, and checking if the ship is sunk.
+Subclasses of Ship:
+
+Battleship, Cruiser, Destroyer, and Submarine extend the Ship class, each implementing its specific ship type behavior.
 User Interaction (BattleshipGame):
 
-The BattleshipGame class handles user interactions.
-Players input row and column coordinates to take shots at the ships.
-The game gives feedback on hits, misses, and when a ship is sunk.
+The main method of BattleshipGame class interacts with the user.
+Prompts the user to input row and column coordinates to take shots at the ships.
+Prints feedback on hits, misses, and sunk ships.
